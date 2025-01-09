@@ -18,7 +18,8 @@ jobs:
 
     steps:
     #- uses: actions/checkout@v4
-    - run: git log --oneline
+    - run: echo $PWD
+    - run: ls
     - run: echo Hello world!
     #- name: Use Node.js ${{ matrix.node-version }}
     #  uses: actions/setup-node@v4
