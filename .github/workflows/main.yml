@@ -28,6 +28,7 @@ jobs:
     - run: export CHROME_BIN="/usr/bin/chromium-browser"   
     - run: npm install
     - run: ./node_modules/@angular/cli/bin/ng.js build
+    - run: ./node_modules/@angular/cli/bin/ng.js test --no-progress --no-watch --browsers=ChromeHeadless 
     #- run: npm ci
     #- run: npm run build --if-present
     #- run: npm test
