@@ -42,10 +42,9 @@ jobs:
         with:
           node-version: 22.12.0
           cache: 'npm'
-      - name: lint
-        run: ./node_modules/@angular/cli/bin/ng.js lint --fix
-      - name: commit changes if any
-        run: |
+      - run: npm install
+      - run: ./node_modules/@angular/cli/bin/ng.js lint --fix
+      - run: |
             git config --global user.name 'gh linting'
             git config --global user.email 'gabriel.delosrios@tutamail.com'
             git commit -am "style: add linting"
