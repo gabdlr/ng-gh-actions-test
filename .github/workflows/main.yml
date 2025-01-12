@@ -33,7 +33,7 @@ jobs:
       - run: sudo apt install -y chromium-browser
       - run: export CHROME_BIN="/usr/bin/chromium-browser"
       - run: npm install
-      - run: ./node_modules/@angular/cli/bin/ng.js test --no-progress --no-watch --browsers=ChromeHeadless
+      - run: ./node_modules/@angular/cli/bin/ng.js test --no-progress --no-watch --browsers=ChromeHeadless --code-coverage
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v4
         env:
