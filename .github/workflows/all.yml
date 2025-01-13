@@ -23,7 +23,9 @@ jobs:
         - name: Install npm packages
           run: npm install
         - name: Create alias for ng cli binary
-          run: alias ng="./node_modules/@angular/cli/bin/ng.js"
+          run: | 
+            alias ng="./node_modules/@angular/cli/bin/ng.js"
+            shopt -s expand_aliases
         - name: Build
           run: ng build
         - name: Lint
