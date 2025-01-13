@@ -35,7 +35,7 @@ jobs:
           uses: ad-m/github-push-action@master
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            branch: ${{ github.ref }}
+            branch: ${{ github.head_ref }}
         - name: Test
           run: ./node_modules/@angular/cli/bin/ng.js test --no-progress --no-watch --browsers=ChromeHeadless --code-coverage
         - name: SonarQube Scan
