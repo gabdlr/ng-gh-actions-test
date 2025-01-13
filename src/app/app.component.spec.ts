@@ -30,6 +30,6 @@ describe('AppComponent', () => {
   });
 
   it('should fail', () => {
-  expect(true).toBeFalse();
+    expect(true).toBeFalse();
   });
 });
