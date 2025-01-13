@@ -28,4 +28,8 @@ describe('AppComponent', () => {
       'Hello, ng-gh-actions-test'
     );
   });
+
+  it('should fail', () => {
+  expect(true).toBeFalse();
+  });
 });
