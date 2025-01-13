@@ -22,12 +22,8 @@ jobs:
                 export CHROME_BIN="/usr/bin/chromium-browser"
         - name: Install npm packages
           run: npm install
-        - name: Create alias for ng cli binary
-          run: | 
-            alias ng="./node_modules/@angular/cli/bin/ng.js"
-            shopt -s expand_aliases
         - name: Build
-          run: ng build
+          run: ./node_modules/@angular/cli/bin/ng.js build
         - name: Lint
           run: ./node_modules/@angular/cli/bin/ng.js lint --fix
         - name: Commit lint changes if any
@@ -41,7 +37,7 @@ jobs:
             github_token: ${{ secrets.GITHUB_TOKEN }}
             branch: ${{ github.ref }}
         - name: Test
-          run: ng test --no-progress --no-watch --browsers=ChromeHeadless --code-coverage
+          run: ./node_modules/@angular/cli/bin/ng.js test --no-progress --no-watch --browsers=ChromeHeadless --code-coverage
         - name: SonarQube Scan
           uses: SonarSource/sonarqube-scan-action@v4
           env:
